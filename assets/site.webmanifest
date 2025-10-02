@@ -1,0 +1,17 @@
+{
+  "name": "SportSwap",
+  "short_name": "SportSwap",
+  "description": "Marketplace de camisetas deportivas con estilo neon.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#2C2C2C",
+  "theme_color": "#FFB400",
+  "icons": [
+    { "src": "img/Logo1.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "img/Logo1.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },
+    { "src": "img/Logo1.png", "sizes": "384x384", "type": "image/png", "purpose": "any" },
+    { "src": "img/Logo1.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
+
+

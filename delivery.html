@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delivery — SportSwap</title>
+    <meta name="theme-color" content="#FFB400" />
+    <meta name="description" content="Envíos rápidos y seguimiento en SportSwap." />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/img/Logo1.png" sizes="180x180">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <meta property="og:title" content="Delivery — SportSwap" />
+    <meta property="og:description" content="Conoce las opciones de envío y seguimiento." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/Logo1.png" />
+    <meta property="og:url" content="/delivery.html" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="SportSwap Home">
+          <img class="brand-logo" src="assets/img/Logo1.png" alt="SportSwap logo" />
+          <span class="brand-sport">SPORT</span><span class="brand-swap">SWAP</span>
+        </a>
+        <nav class="main-nav" aria-label="Principal">
+          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="delivery.html">Delivery</a>
+          <a class="nav-link cta" href="login.html">Log in</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="delivery">
+        <div class="container">
+          <h1>Delivery y envíos</h1>
+          <p class="muted">Rápido, seguro y con seguimiento en tiempo real.</p>
+
+          <div class="delivery-grid">
+            <div class="card-panel">
+              <h2>Opciones de envío</h2>
+              <ul class="list">
+                <li><strong>Express 24h</strong> — ciudades principales</li>
+                <li><strong>Estándar 3-5 días</strong> — todo el país</li>
+                <li><strong>Internacional</strong> — 5-10 días</li>
+              </ul>
+            </div>
+            <div class="card-panel">
+              <h2>Seguimiento</h2>
+              <form id="trackForm">
+                <div class="field">
+                  <label for="tracking">Código de seguimiento</label>
+                  <input id="tracking" name="tracking" placeholder="SS-1234-5678" required />
+                  <span class="error" data-for="tracking"></span>
+                </div>
+                <button class="btn btn-ghost" type="submit">Consultar</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="info-banner">
+            <span class="arrow arrow-left" aria-hidden="true"></span>
+            <p>Compras protegidas. Cambios fáciles. <a class="link neon" href="#">Conoce más</a></p>
+            <span class="arrow arrow-right" aria-hidden="true"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SportSwap. Neon marketplace.</p>
+        <div class="footer-links">
+          <a href="#" class="link">Términos</a>
+          <a href="#" class="link">Privacidad</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+  </html>
+
+

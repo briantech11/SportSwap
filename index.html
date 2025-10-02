@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportSwap — Marketplace de camisetas</title>
+    <meta name="theme-color" content="#FFB400" />
+    <meta name="description" content="SportSwap: marketplace neon de camisetas deportivas. Compra, vende y haz swap con estilo." />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/img/Logo1.png" sizes="180x180">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <meta property="og:title" content="SportSwap — Marketplace de camisetas" />
+    <meta property="og:description" content="Compra, vende y haz swap de camisetas deportivas." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/Logo1.png" />
+    <meta property="og:url" content="/index.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SportSwap — Marketplace de camisetas" />
+    <meta name="twitter:description" content="Compra, vende y haz swap de camisetas deportivas." />
+    <meta name="twitter:image" content="assets/img/Logo1.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="SportSwap Home">
+          <img class="brand-logo" src="assets/img/Logo1.png" alt="SportSwap logo" />
+          <span class="brand-sport">SPORT</span><span class="brand-swap">SWAP</span>
+        </a>
+        <nav class="main-nav" aria-label="Principal">
+          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="delivery.html">Delivery</a>
+          <a class="nav-link cta" href="login.html">Log in</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>Marketplace de camisetas deportivas</h1>
+            <p>Consigue ediciones únicas, cambia tu estilo y brilla con neon vibes.</p>
+            <div class="hero-actions">
+              <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+              <a href="login.html" class="btn btn-ghost">Vender ahora</a>
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="neon-jersey">
+              <div class="jersey-shape"></div>
+              <div class="arrow arrow-left" aria-hidden="true"></div>
+              <div class="arrow arrow-right" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="catalogo" class="catalog">
+        <div class="container">
+          <div class="section-head">
+            <h2>Camisetas destacadas</h2>
+            <a href="#" class="link neon">Ver todo</a>
+          </div>
+
+          <div class="grid">
+            <article class="card">
+              <div class="card-media gradient-red"></div>
+              <div class="card-body">
+                <h3>FC Rojo — Local 24/25</h3>
+                <p class="price">$89.00</p>
+                <button class="btn btn-small">Añadir</button>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-media gradient-gold"></div>
+              <div class="card-body">
+                <h3>Amarillo United — Visita</h3>
+                <p class="price">$79.00</p>
+                <button class="btn btn-small">Añadir</button>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-media gradient-orange"></div>
+              <div class="card-body">
+                <h3>Swap City — Tercera</h3>
+                <p class="price">$99.00</p>
+                <button class="btn btn-small">Añadir</button>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-media gradient-gray"></div>
+              <div class="card-body">
+                <h3>Classic Gris — Retro</h3>
+                <p class="price">$69.00</p>
+                <button class="btn btn-small">Añadir</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SportSwap. Neon marketplace.</p>
+        <div class="footer-links">
+          <a href="#" class="link">Términos</a>
+          <a href="#" class="link">Privacidad</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+  </html>
+
+
