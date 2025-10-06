@@ -1,87 +1,166 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delivery — SportSwap</title>
-    <meta name="theme-color" content="#FFB400" />
-    <meta name="description" content="Envíos rápidos y seguimiento en SportSwap." />
-    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="assets/img/Logo1.png" sizes="180x180">
-    <link rel="manifest" href="assets/site.webmanifest">
-    <meta property="og:title" content="Delivery — SportSwap" />
-    <meta property="og:description" content="Conoce las opciones de envío y seguimiento." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/img/Logo1.png" />
-    <meta property="og:url" content="/delivery.html" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a href="index.html" class="brand" aria-label="SportSwap Home">
-          <img class="brand-logo" src="assets/img/Logo1.png" alt="SportSwap logo" />
-          <span class="brand-sport">SPORT</span><span class="brand-swap">SWAP</span>
-        </a>
-        <nav class="main-nav" aria-label="Principal">
-          <a class="nav-link" href="index.html">Inicio</a>
-          <a class="nav-link" href="delivery.html">Delivery</a>
-          <a class="nav-link cta" href="login.html">Log in</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delivery | SportSwap</title>
+  <meta name="theme-color" content="#FFB400" />
+  <meta name="description" content="Envíos rápidos y seguimiento en SportSwap." />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/Logo1.png" sizes="180x180">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta property="og:title" content="Delivery — SportSwap" />
+  <meta property="og:description" content="Conoce las opciones de envío y seguimiento." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/Logo1.png" />
+  <meta property="og:url" content="/delivery.html" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #0D0D0D;
+      color: #F2F2F2;
+      font-family: 'Poppins', sans-serif;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #FF3B3B, #FF7B00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="SportSwap Home">
+        <img class="brand-logo" src="assets/img/Logo1.png" alt="SportSwap logo" />
+        <span class="brand-sport">SPORT</span><span class="brand-swap">SWAP</span>
+      </a>
+      <nav class="main-nav" aria-label="Principal">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="catalog.html">Catálogo</a>
+        <a class="nav-link" href="delivery.html">Delivery</a>
+        <a class="nav-link cta" href="login.html">Log in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+  <!-- Hero -->
+  <section class="text-center py-20 px-6">
+    <h1 class="text-5xl font-bold gradient-text mb-4">Recibe tus camisetas en tiempo récord</h1>
+    <p class="text-lg text-gray-300 mb-8">
+      Envíos seguros a todo Panamá. Rápido, confiable y con seguimiento en línea.
+    </p>
+    <button class="bg-gradient-to-r from-[#FF3B3B] to-[#FF7B00] text-white px-6 py-3 rounded-full text-lg font-semibold hover:scale-105 transition">
+      Calcular Envío
+    </button>
+  </section>
+
+  <!-- Zonas de entrega -->
+  <section class="max-w-5xl mx-auto text-center py-16 px-6">
+    <h2 class="text-3xl font-bold gradient-text mb-10">Zonas de Entrega</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left border border-gray-700 rounded-lg overflow-hidden">
+        <thead class="bg-[#1A1A1A] text-gray-300">
+          <tr>
+            <th class="py-3 px-6">Zona</th>
+            <th class="py-3 px-6">Tiempo Estimado</th>
+            <th class="py-3 px-6">Costo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-gray-700 hover:bg-[#1F1F1F] transition">
+            <td class="py-3 px-6">Ciudad de Panamá</td>
+            <td class="py-3 px-6">1-2 días hábiles</td>
+            <td class="py-3 px-6">$3.00</td>
+          </tr>
+          <tr class="border-t border-gray-700 hover:bg-[#1F1F1F] transition">
+            <td class="py-3 px-6">Panamá Oeste</td>
+            <td class="py-3 px-6">2-3 días hábiles</td>
+            <td class="py-3 px-6">$4.50</td>
+          </tr>
+          <tr class="border-t border-gray-700 hover:bg-[#1F1F1F] transition">
+            <td class="py-3 px-6">Interior</td>
+            <td class="py-3 px-6">3-5 días hábiles</td>
+            <td class="py-3 px-6">$6.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Tipos de entrega -->
+  <section class="bg-[#141414] py-20 px-6">
+    <h2 class="text-3xl font-bold gradient-text text-center mb-12">Tipos de Envío</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-[#1C1C1C] rounded-2xl p-8 hover:scale-105 transition transform shadow-lg">
+        <div class="text-5xl mb-4">🚀</div>
+        <h3 class="text-2xl font-semibold mb-2">Express Swap</h3>
+        <p class="text-gray-400">Entrega el mismo día si realizas tu compra antes de las 3:00 p.m.</p>
       </div>
-    </header>
-
-    <main>
-      <section class="delivery">
-        <div class="container">
-          <h1>Delivery y envíos</h1>
-          <p class="muted">Rápido, seguro y con seguimiento en tiempo real.</p>
-
-          <div class="delivery-grid">
-            <div class="card-panel">
-              <h2>Opciones de envío</h2>
-              <ul class="list">
-                <li><strong>Express 24h</strong> — ciudades principales</li>
-                <li><strong>Estándar 3-5 días</strong> — todo el país</li>
-                <li><strong>Internacional</strong> — 5-10 días</li>
-              </ul>
-            </div>
-            <div class="card-panel">
-              <h2>Seguimiento</h2>
-              <form id="trackForm">
-                <div class="field">
-                  <label for="tracking">Código de seguimiento</label>
-                  <input id="tracking" name="tracking" placeholder="SS-1234-5678" required />
-                  <span class="error" data-for="tracking"></span>
-                </div>
-                <button class="btn btn-ghost" type="submit">Consultar</button>
-              </form>
-            </div>
-          </div>
-
-          <div class="info-banner">
-            <span class="arrow arrow-left" aria-hidden="true"></span>
-            <p>Compras protegidas. Cambios fáciles. <a class="link neon" href="#">Conoce más</a></p>
-            <span class="arrow arrow-right" aria-hidden="true"></span>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© <span id="year"></span> SportSwap. Neon marketplace.</p>
-        <div class="footer-links">
-          <a href="#" class="link">Términos</a>
-          <a href="#" class="link">Privacidad</a>
-        </div>
+      <div class="bg-[#1C1C1C] rounded-2xl p-8 hover:scale-105 transition transform shadow-lg">
+        <div class="text-5xl mb-4">📬</div>
+        <h3 class="text-2xl font-semibold mb-2">Standard Swap</h3>
+        <p class="text-gray-400">Entrega en 2-3 días hábiles en todo el país.</p>
       </div>
-    </footer>
+      <div class="bg-[#1C1C1C] rounded-2xl p-8 hover:scale-105 transition transform shadow-lg">
+        <div class="text-5xl mb-4">🔁</div>
+        <h3 class="text-2xl font-semibold mb-2">Pickup Swap</h3>
+        <p class="text-gray-400">Recoge tu pedido en puntos autorizados sin costo adicional.</p>
+      </div>
+    </div>
+  </section>
 
-    <script src="assets/js/app.js"></script>
-  </body>
-  </html>
+  <!-- Rastreo de pedidos -->
+  <section class="text-center py-20 px-6">
+    <h2 class="text-3xl font-bold gradient-text mb-6">Rastrea tu pedido</h2>
+    <p class="text-gray-400 mb-6">Ingresa tu número de pedido para conocer el estado de tu envío.</p>
+    <div class="flex justify-center gap-3">
+      <input type="text" placeholder="Ejemplo: SS12345" class="px-5 py-3 rounded-full bg-[#1A1A1A] border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#FF7B00] w-64 text-center">
+      <button class="bg-gradient-to-r from-[#FF3B3B] to-[#FF7B00] text-white px-6 py-3 rounded-full hover:scale-105 transition">
+        Buscar
+      </button>
+    </div>
+  </section>
+
+  <!-- Preguntas frecuentes -->
+  <section class="bg-[#141414] py-16 px-6">
+    <h2 class="text-3xl font-bold gradient-text text-center mb-10">Preguntas Frecuentes</h2>
+    <div class="max-w-3xl mx-auto space-y-4">
+      <details class="bg-[#1C1C1C] rounded-xl p-5">
+        <summary class="font-semibold cursor-pointer">¿Qué pasa si mi pedido llega dañado?</summary>
+        <p class="text-gray-400 mt-2">Puedes solicitar una devolución o cambio sin costo adicional dentro de los primeros 3 días hábiles.</p>
+      </details>
+      <details class="bg-[#1C1C1C] rounded-xl p-5">
+        <summary class="font-semibold cursor-pointer">¿Puedo cambiar mi dirección después de comprar?</summary>
+        <p class="text-gray-400 mt-2">Sí, siempre y cuando tu pedido no haya salido a reparto.</p>
+      </details>
+      <details class="bg-[#1C1C1C] rounded-xl p-5">
+        <summary class="font-semibold cursor-pointer">¿Tienen envíos internacionales?</summary>
+        <p class="text-gray-400 mt-2">Por el momento no, pero pronto habilitaremos entregas en Centroamérica.</p>
+      </details>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> SportSwap. Neon marketplace.</p>
+      <div class="footer-links">
+        <a href="#" class="link">Términos</a>
+        <a href="#" class="link">Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
 
 
