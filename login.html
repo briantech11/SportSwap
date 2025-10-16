@@ -53,7 +53,7 @@
             <button type="submit" class="btn btn-primary full">Entrar</button>
           </form>
 
-          <p class="small muted">¿No tienes cuenta? <a href="#" class="link neon">Regístrate</a></p>
+          <p class="small muted">¿No tienes cuenta? <a href="#" id="registerLink" class="link neon">Regístrate</a></p>
         </div>
       </section>
     </main>
@@ -68,6 +68,31 @@
       </div>
     </footer>
 
+    <!-- Firebase SDKs -->
+    <script type="module">
+      // Import Firebase modules
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+      import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+      
+      // Tu configuración de Firebase - REEMPLAZA CON TUS VALORES
+      const firebaseConfig = {
+        apiKey: "AIzaSyA03svHF839UbrLrSj64f-IsEsfkuIv96Y",
+        authDomain: "briannntech11.firebaseapp.com",
+        projectId: "briannntech11" ,
+        storageBucket:  "briannntech11.firebasestorage.app",
+        messagingSenderId:  "15374289068",
+        appId: "1:15374289068:web:320ddafa66d421bf577709"
+      };
+
+      // Inicializar Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Hacer disponible globalmente
+      window.auth = auth;
+      window.signInWithEmailAndPassword = signInWithEmailAndPassword;
+      window.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
+    </script>
     <script src="assets/js/app.js"></script>
   </body>
   </html>
