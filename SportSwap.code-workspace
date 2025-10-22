@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Auth-System/auth-tutorial/firebase"
+		}
+	],
+	"settings": {}
+}
