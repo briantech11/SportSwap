@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout — SportSwap</title>
+    <meta name="theme-color" content="#FFB400" />
+    <meta name="description" content="Completa tu compra en SportSwap. Finaliza tu pedido y recibe tu número de pedido." />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/img/Logo1.png" sizes="180x180">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <meta property="og:title" content="Checkout — SportSwap" />
+    <meta property="og:description" content="Completa tu compra y recibe tu número de pedido único." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/Logo1.png" />
+    <meta property="og:url" content="/checkout.html" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="SportSwap Home">
+          <img class="brand-logo" src="assets/img/Logo1.png" alt="SportSwap logo" />
+          <span class="brand-sport">SPORT</span><span class="brand-swap">SWAP</span>
+        </a>
+        <nav class="main-nav" aria-label="Principal">
+          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="catalog.html">Catálogo</a>
+          <a class="nav-link" href="delivery.html">Delivery</a>
+          <a class="nav-link cta" href="login.html">Log in</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="auth">
+        <div class="container">
+          <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px;" class="checkout-grid">
+            
+            <!-- Formulario de Checkout -->
+            <div class="card-panel">
+              <h1 style="margin-top: 0; margin-bottom: 8px;">Finalizar Compra</h1>
+              <p class="muted" style="margin-bottom: 24px;">Completa tus datos para completar tu pedido</p>
+
+              <form id="checkoutForm" novalidate>
+                <!-- Información Personal -->
+                <h3 style="margin-top: 0; margin-bottom: 16px; font-size: 18px;">Información Personal</h3>
+                
+                <div class="field">
+                  <label for="checkoutFullName">Nombre Completo *</label>
+                  <input id="checkoutFullName" name="fullName" type="text" placeholder="Juan Pérez" required />
+                  <span class="error" data-for="checkoutFullName"></span>
+                </div>
+
+                <div class="field">
+                  <label for="checkoutEmail">Correo Electrónico *</label>
+                  <input id="checkoutEmail" name="email" type="email" placeholder="juan@email.com" required />
+                  <span class="error" data-for="checkoutEmail"></span>
+                </div>
+
+                <div class="field">
+                  <label for="checkoutPhone">Número de Teléfono *</label>
+                  <input id="checkoutPhone" name="phone" type="tel" placeholder="12345678" maxlength="8" pattern="[0-9]{8}" required />
+                  <span class="error" data-for="checkoutPhone"></span>
+                  <small style="opacity: 0.7; font-size: 11px;">8 dígitos sin espacios ni guiones</small>
+                </div>
+
+                <!-- Dirección de Envío -->
+                <h3 style="margin-top: 24px; margin-bottom: 16px; font-size: 18px;">Dirección de Envío</h3>
+
+                <div class="field">
+                  <label for="checkoutProvince">Provincia *</label>
+                  <select id="checkoutProvince" name="province" required>
+                    <option value="">Selecciona una provincia</option>
+                    <option value="panama">Panamá</option>
+                    <option value="colon">Colón</option>
+                    <option value="darien">Darién</option>
+                    <option value="cocle">Coclé</option>
+                    <option value="veraguas">Veraguas</option>
+                    <option value="los-santos">Los Santos</option>
+                    <option value="herrera">Herrera</option>
+                    <option value="chiriqui">Chiriquí</option>
+                    <option value="bocas-del-toro">Bocas del Toro</option>
+                    <option value="panama-oeste">Panamá Oeste</option>
+                  </select>
+                  <span class="error" data-for="checkoutProvince"></span>
+                </div>
+
+                <div class="field">
+                  <label for="checkoutDistrict">Distrito *</label>
+                  <select id="checkoutDistrict" name="district" required disabled>
+                    <option value="">Primero selecciona una provincia</option>
+                  </select>
+                  <span class="error" data-for="checkoutDistrict"></span>
+                </div>
+
+                <div class="field">
+                  <label for="checkoutAddress">Dirección Detallada *</label>
+                  <textarea id="checkoutAddress" name="address" rows="3" placeholder="Calle, número, edificio, apartamento, etc." required></textarea>
+                  <span class="error" data-for="checkoutAddress"></span>
+                </div>
+
+                <!-- Método de Pago -->
+                <h3 style="margin-top: 24px; margin-bottom: 16px; font-size: 18px;">Método de Pago</h3>
+
+                <div class="field">
+                  <label for="checkoutPaymentMethod">Método de Pago *</label>
+                  <select id="checkoutPaymentMethod" name="paymentMethod" required>
+                    <option value="">Selecciona un método de pago</option>
+                    <option value="efectivo">Efectivo</option>
+                    <option value="yappy">Yappy</option>
+                    <option value="tarjeta">Tarjeta</option>
+                  </select>
+                  <span class="error" data-for="checkoutPaymentMethod"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary full" style="margin-top: 24px;">
+                  Completar Pedido
+                </button>
+              </form>
+            </div>
+
+            <!-- Resumen del Carrito -->
+            <div class="card-panel" style="height: fit-content;">
+              <h2 style="margin-top: 0; margin-bottom: 16px;">Resumen del Pedido</h2>
+              
+              <div id="checkoutCartItems" style="margin-bottom: 24px;">
+                <!-- Los items del carrito se cargarán aquí -->
+              </div>
+
+              <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; margin-bottom: 16px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                  <span>Subtotal:</span>
+                  <span id="checkoutSubtotal">$0.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                  <span>Envío:</span>
+                  <span id="checkoutShipping">$0.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 18px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">
+                  <span>Total:</span>
+                  <span id="checkoutTotal" style="color: var(--color-gold);">$0.00</span>
+                </div>
+              </div>
+
+              <a href="index.html" class="link neon" style="display: block; text-align: center; margin-top: 16px;">
+                ← Continuar comprando
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal de Confirmación -->
+      <div id="orderConfirmationModal">
+        <div class="card-panel" style="max-width: 500px; width: 100%; text-align: center;">
+          <div style="font-size: 64px; margin-bottom: 16px;">✅</div>
+          <h2 style="margin-top: 0; margin-bottom: 16px;">¡Pedido Completado!</h2>
+          <p class="muted" style="margin-bottom: 24px;">Tu pedido ha sido procesado exitosamente</p>
+          
+          <div style="background: rgba(255,255,255,0.05); border: 2px solid var(--color-gold); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+            <p style="margin: 0; opacity: 0.8; font-size: 14px;">Tu número de pedido es:</p>
+            <p id="orderNumberDisplay" style="margin: 8px 0 0 0; font-size: 32px; font-weight: 700; color: var(--color-gold); font-family: Orbitron, monospace; letter-spacing: 2px;">
+              SS123456
+            </p>
+            <p style="margin: 8px 0 0 0; opacity: 0.7; font-size: 12px;">Guarda este número para hacer seguimiento de tu pedido</p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <a href="delivery-form.html" id="deliveryLink" class="btn btn-primary full">
+              Apartar Delivery
+            </a>
+            <button id="closeModalBtn" class="btn btn-ghost full">
+              Continuar Comprando
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SportSwap. Neon marketplace.</p>
+        <div class="footer-links">
+          <a href="#" class="link">Términos</a>
+          <a href="#" class="link">Privacidad</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+      import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+      import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyA03svHF839UbrLrSj64f-IsEsfkuIv96Y",
+        authDomain: "briannntech11.firebaseapp.com",
+        projectId: "briannntech11",
+        storageBucket: "briannntech11.firebasestorage.app",
+        messagingSenderId: "15374289068",
+        appId: "1:15374289068:web:320ddafa66d421bf577709"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+      
+      // Hacer disponible globalmente
+      window.auth = auth;
+      window.onAuthStateChanged = onAuthStateChanged;
+      window.db = db;
+      window.collection = collection;
+      window.addDoc = addDoc;
+      window.serverTimestamp = serverTimestamp;
+    </script>
+    <script src="assets/js/checkout.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
+

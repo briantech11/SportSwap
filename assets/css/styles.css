@@ -248,9 +248,13 @@ footer {
 }
 .field { text-align: left; display: grid; gap: 8px; margin-bottom: 12px; }
 .field label { font-weight: 600; }
-.field input { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.16); border-radius: 12px; padding: 12px 12px; color: var(--color-white); outline: none; transition: box-shadow 0.2s ease, border-color 0.2s ease; }
-.field input:focus { border-color: var(--color-gold); box-shadow: var(--shadow-neon-gold); }
+.field input, .field select, .field textarea { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.16); border-radius: 12px; padding: 12px 12px; color: var(--color-white); outline: none; transition: box-shadow 0.2s ease, border-color 0.2s ease; width: 100%; font-family: inherit; font-size: inherit; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--color-gold); box-shadow: var(--shadow-neon-gold); }
+.field select { cursor: pointer; }
+.field select option { background: var(--gris-oscuro); color: var(--color-white); }
+.field textarea { resize: vertical; min-height: 80px; }
 .error { color: var(--color-red); font-size: 12px; min-height: 16px; }
+.provider-separator { text-align: center; margin: 14px 0; opacity: 0.6; }
 
 .delivery { padding: 40px 0 64px; }
 .delivery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 18px; }
@@ -326,6 +330,35 @@ footer {
 @media (max-width: 520px) {
   .grid { grid-template-columns: 1fr; }
   .brand-logo { width: 30px; height: 30px; }
+}
+
+/* Checkout responsive */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 920px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modal de confirmación de pedido */
+#orderConfirmationModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#orderConfirmationModal[style*="flex"] {
+  display: flex !important;
 }
 
 

@@ -109,6 +109,9 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error Google Sign-In:', error);
             var msg = 'No se pudo iniciar con Google';
             switch (error.code) {
+              case 'auth/unauthorized-domain':
+                msg = 'Error: Dominio no autorizado. Por favor, agrega "127.0.0.1" y "localhost" en la configuración de Firebase Console > Authentication > Settings > Authorized domains.';
+                break;
               case 'auth/popup-closed-by-user':
                 msg = 'Ventana cerrada antes de completar el inicio';
                 break;
@@ -285,7 +288,17 @@ document.addEventListener('DOMContentLoaded', function () {
       var clearBtn = drawer.querySelector('#cartClear');
       if (clearBtn) clearBtn.addEventListener('click', function(){ saveCart([]); });
       var checkoutBtn = drawer.querySelector('#cartCheckout');
-      if (checkoutBtn) checkoutBtn.addEventListener('click', function(){ alert('Checkout simulado.'); });
+      if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function(){
+          var cart = getCart();
+          if (!cart || cart.length === 0) {
+            alert('Tu carrito está vacío. Agrega productos antes de hacer checkout.');
+            return;
+          }
+          // Redirigir a la página de checkout
+          window.location.href = 'checkout.html';
+        });
+      }
 
       toggleBtn = document.createElement('button');
       toggleBtn.className = 'cart-toggle';

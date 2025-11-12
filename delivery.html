@@ -56,9 +56,9 @@
     <p class="text-lg text-gray-300 mb-8">
       Envíos seguros a todo Panamá. Rápido, confiable y con seguimiento en línea.
     </p>
-    <button class="bg-gradient-to-r from-[#FF3B3B] to-[#FF7B00] text-white px-6 py-3 rounded-full text-lg font-semibold hover:scale-105 transition">
-      Calcular Envío
-    </button>
+    <a href="delivery-form.html" class="bg-gradient-to-r from-[#FF3B3B] to-[#FF7B00] text-white px-6 py-3 rounded-full text-lg font-semibold hover:scale-105 transition inline-block">
+      Apartar Delivery
+    </a>
   </section>
 
   <!-- Zonas de entrega -->
@@ -116,15 +116,60 @@
     </div>
   </section>
 
-  <!-- Rastreo de pedidos -->
-  <section class="text-center py-20 px-6">
-    <h2 class="text-3xl font-bold gradient-text mb-6">Rastrea tu pedido</h2>
-    <p class="text-gray-400 mb-6">Ingresa tu número de pedido para conocer el estado de tu envío.</p>
-    <div class="flex justify-center gap-3">
-      <input type="text" placeholder="Ejemplo: SS12345" class="px-5 py-3 rounded-full bg-[#1A1A1A] border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#FF7B00] w-64 text-center">
-      <button class="bg-gradient-to-r from-[#FF3B3B] to-[#FF7B00] text-white px-6 py-3 rounded-full hover:scale-105 transition">
-        Buscar
-      </button>
+  <!-- Feedback / Reseñas -->
+  <section class="py-20 px-6 bg-[#141414]">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold gradient-text text-center mb-4">Comparte tu Experiencia</h2>
+      <p class="text-gray-400 text-center mb-10">Déjanos saber cómo fue tu experiencia con nuestro servicio de delivery</p>
+      
+      <form id="feedbackForm" class="bg-[#1C1C1C] rounded-2xl p-8 shadow-lg">
+        <div class="space-y-6">
+          <!-- Nombre -->
+          <div>
+            <label for="feedbackName" class="block text-sm font-semibold mb-2 text-gray-300">Nombre (opcional)</label>
+            <input type="text" id="feedbackName" name="name" placeholder="Tu nombre" class="w-full px-4 py-3 rounded-lg bg-[#1A1A1A] border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-[#FF7B00] placeholder-gray-500">
+            <span class="error text-red-400 text-xs mt-1 block min-h-[16px]" data-for="feedbackName"></span>
+          </div>
+
+          <!-- Número de pedido -->
+          <div>
+            <label for="feedbackOrder" class="block text-sm font-semibold mb-2 text-gray-300">Número de pedido (opcional)</label>
+            <input type="text" id="feedbackOrder" name="orderNumber" placeholder="Ejemplo: SS12345" class="w-full px-4 py-3 rounded-lg bg-[#1A1A1A] border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-[#FF7B00] placeholder-gray-500">
+            <span class="error text-red-400 text-xs mt-1 block min-h-[16px]" data-for="feedbackOrder"></span>
+          </div>
+
+          <!-- Calificación -->
+          <div>
+            <label class="block text-sm font-semibold mb-3 text-gray-300">Calificación *</label>
+            <div class="flex items-center gap-2 mb-2" id="ratingStars">
+              <button type="button" class="rating-star text-4xl cursor-pointer transition-all duration-200 opacity-50 hover:opacity-100 hover:scale-125" data-rating="1" aria-label="1 estrella" title="1 estrella - Muy malo">★</button>
+              <button type="button" class="rating-star text-4xl cursor-pointer transition-all duration-200 opacity-50 hover:opacity-100 hover:scale-125" data-rating="2" aria-label="2 estrellas" title="2 estrellas - Malo">★</button>
+              <button type="button" class="rating-star text-4xl cursor-pointer transition-all duration-200 opacity-50 hover:opacity-100 hover:scale-125" data-rating="3" aria-label="3 estrellas" title="3 estrellas - Regular">★</button>
+              <button type="button" class="rating-star text-4xl cursor-pointer transition-all duration-200 opacity-50 hover:opacity-100 hover:scale-125" data-rating="4" aria-label="4 estrellas" title="4 estrellas - Bueno">★</button>
+              <button type="button" class="rating-star text-4xl cursor-pointer transition-all duration-200 opacity-50 hover:opacity-100 hover:scale-125" data-rating="5" aria-label="5 estrellas" title="5 estrellas - Excelente">★</button>
+            </div>
+            <input type="hidden" id="feedbackRating" name="rating" value="" required>
+            <span class="error text-red-400 text-xs mt-1 block min-h-[16px]" data-for="feedbackRating"></span>
+            <p class="text-xs text-gray-500 mt-1">Haz clic en las estrellas para calificar (1 = muy malo, 5 = excelente)</p>
+          </div>
+
+          <!-- Comentario -->
+          <div>
+            <label for="feedbackComment" class="block text-sm font-semibold mb-2 text-gray-300">Tu reseña *</label>
+            <textarea id="feedbackComment" name="comment" rows="5" placeholder="Comparte tu experiencia con nuestro servicio de delivery..." required maxlength="500" class="w-full px-4 py-3 rounded-lg bg-[#1A1A1A] border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-[#FF7B00] placeholder-gray-500 resize-none"></textarea>
+            <div class="flex justify-between items-center mt-1">
+              <span class="error text-red-400 text-xs block min-h-[16px]" data-for="feedbackComment"></span>
+              <span id="charCount" class="text-xs text-gray-500">0/500 caracteres</span>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">Mínimo 10 caracteres, máximo 500 caracteres</p>
+          </div>
+
+          <!-- Botón de enviar -->
+          <button type="submit" class="w-full bg-gradient-to-r from-[#FF3B3B] to-[#FF7B00] text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition transform shadow-lg">
+            Enviar Reseña
+          </button>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -159,6 +204,26 @@
     </div>
   </footer>
 
+  <!-- Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+    import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA03svHF839UbrLrSj64f-IsEsfkuIv96Y",
+      authDomain: "briannntech11.firebaseapp.com",
+      projectId: "briannntech11",
+      storageBucket: "briannntech11.firebasestorage.app",
+      messagingSenderId: "15374289068",
+      appId: "1:15374289068:web:320ddafa66d421bf577709"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    window.auth = auth;
+    window.onAuthStateChanged = onAuthStateChanged;
+  </script>
+  <script src="assets/js/feedback.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>

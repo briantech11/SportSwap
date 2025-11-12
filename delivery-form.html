@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Delivery — SportSwap</title>
+    <meta name="theme-color" content="#FFB400" />
+    <meta name="description" content="Aparta tu delivery en SportSwap. Llena el formulario con tus datos de envío." />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/img/Logo1.png" sizes="180x180">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <meta property="og:title" content="Formulario de Delivery — SportSwap" />
+    <meta property="og:description" content="Aparta tu delivery y recibe tus camisetas en tiempo récord." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/Logo1.png" />
+    <meta property="og:url" content="/delivery-form.html" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="SportSwap Home">
+          <img class="brand-logo" src="assets/img/Logo1.png" alt="SportSwap logo" />
+          <span class="brand-sport">SPORT</span><span class="brand-swap">SWAP</span>
+        </a>
+        <nav class="main-nav" aria-label="Principal">
+          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="catalog.html">Catálogo</a>
+          <a class="nav-link" href="delivery.html">Delivery</a>
+          <a class="nav-link cta" href="login.html">Log in</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="auth">
+        <div class="container auth-inner card-panel">
+          <div class="auth-logo" style="background-image: url('assets/img/Logo1.png');" aria-label="SportSwap logo"></div>
+          <h1>Formulario de Delivery</h1>
+          <p class="muted">Completa tus datos para apartar tu pedido</p>
+
+          <form id="deliveryForm" novalidate>
+            <div class="field">
+              <label for="fullName">Nombre Completo *</label>
+              <input id="fullName" name="fullName" type="text" placeholder="Juan Pérez" required />
+              <span class="error" data-for="fullName"></span>
+            </div>
+
+            <div class="field">
+              <label for="username">Nombre de Usuario</label>
+              <input id="username" name="username" type="text" placeholder="juan.perez" />
+              <span class="error" data-for="username"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">Correo Electrónico *</label>
+              <input id="email" name="email" type="email" placeholder="juan@email.com" required />
+              <span class="error" data-for="email"></span>
+            </div>
+
+            <div class="field">
+              <label for="phone">Número de Teléfono *</label>
+              <input id="phone" name="phone" type="tel" placeholder="12345678" maxlength="8" pattern="[0-9]{8}" required />
+              <span class="error" data-for="phone"></span>
+              <small style="opacity: 0.7; font-size: 11px;">8 dígitos sin espacios ni guiones</small>
+            </div>
+
+            <div class="field">
+              <label for="province">Provincia *</label>
+              <select id="province" name="province" required>
+                <option value="">Selecciona una provincia</option>
+                <option value="panama">Panamá</option>
+                <option value="colon">Colón</option>
+                <option value="darien">Darién</option>
+                <option value="cocle">Coclé</option>
+                <option value="veraguas">Veraguas</option>
+                <option value="los-santos">Los Santos</option>
+                <option value="herrera">Herrera</option>
+                <option value="chiriqui">Chiriquí</option>
+                <option value="bocas-del-toro">Bocas del Toro</option>
+                <option value="panama-oeste">Panamá Oeste</option>
+              </select>
+              <span class="error" data-for="province"></span>
+            </div>
+
+            <div class="field">
+              <label for="district">Distrito *</label>
+              <select id="district" name="district" required disabled>
+                <option value="">Primero selecciona una provincia</option>
+              </select>
+              <span class="error" data-for="district"></span>
+            </div>
+
+            <div class="field">
+              <label for="orderNumber">Número de Pedido *</label>
+              <input id="orderNumber" name="orderNumber" type="text" placeholder="SS12345" required />
+              <span class="error" data-for="orderNumber"></span>
+            </div>
+
+            <div class="field">
+              <label for="paymentMethod">Método de Pago *</label>
+              <select id="paymentMethod" name="paymentMethod" required>
+                <option value="">Selecciona un método de pago</option>
+                <option value="efectivo">Efectivo</option>
+                <option value="yappy">Yappy</option>
+                <option value="tarjeta">Tarjeta</option>
+              </select>
+              <span class="error" data-for="paymentMethod"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary full">Apartar Delivery</button>
+          </form>
+
+          <p class="small muted" style="margin-top: 16px;">
+            <a href="delivery.html" class="link neon">← Volver a Delivery</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> SportSwap. Neon marketplace.</p>
+        <div class="footer-links">
+          <a href="#" class="link">Términos</a>
+          <a href="#" class="link">Privacidad</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+      import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyA03svHF839UbrLrSj64f-IsEsfkuIv96Y",
+        authDomain: "briannntech11.firebaseapp.com",
+        projectId: "briannntech11",
+        storageBucket: "briannntech11.firebasestorage.app",
+        messagingSenderId: "15374289068",
+        appId: "1:15374289068:web:320ddafa66d421bf577709"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      
+      // Hacer disponible globalmente
+      window.auth = auth;
+      window.onAuthStateChanged = onAuthStateChanged;
+    </script>
+    <script src="assets/js/delivery-form.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
+
